@@ -6,6 +6,11 @@ $num = $_POST["flip"];
 $yearNum = $_POST["year"];
 $number = $_POST["number"];
 $primeFact = $_POST["fact"];
+$divident = $_POST["divNumber"];
+$numberEveOdd = $_POST["numEveOdd"];
+$alpha = $_POST["alphabet"];
+$numEo = (int)$numberEveOdd;
+$dividendNum = (int)$divident;
 $primeNum = (int)$primeFact;
 $power = (int)$number;
 $year = (int)$yearNum;
@@ -16,7 +21,12 @@ $tail = 0;
 $consecFact =  0;
 $powerValue  = 1;
 $powerNum = 1;
+$numA = 11;
+$numB = 12;
 $factors = array();
+$numArray = array(18, 15, 10);
+$max = $numArray[0];
+
 echo "$flip times";
 while($index<$flip){
     $chance = rand(0, 2);
@@ -59,6 +69,31 @@ for($index = 1; $index<=$primeNum; $index++){
 for($index = 0; $index<count($factors); $index++){
     echo $factors[$index];
 }
+echo "<p>Remainder is</p>" . $dividendNum%2 ."!";
+echo "<p>Qutient is</p>" . $dividendNum/2 ."!";
+$temp = $numA;
+$numA = $numB;
+$numB = $temp;
+echo "<p>number are swaped</p>" . $numA ."," . $numB . ".";
+if($numEo%2 == 0){
+    echo "<p>number is even</p>";
+}
+else{
+    echo "<p>number is odd</p>";
+}
+if($alpha === "a" && $alpha === "e" && $alpha === "i" && $alpha === "o" && $alpha === "u"){
+    echo  "<p>alphabet is vowel</p>";
+}
+else{
+    echo "<p>alphabet is consonent</p>";
+}
+for($maxIndex = 1; $maxIndex<count($numArray); $maxIndex++){
+    if($numArray[$maxIndex]>$max){
+        $max = $numArray[$maxIndex];
+    }
+}
+echo "<p>Maximum number is $max</p>";
+
 ?>
 
 </body>
